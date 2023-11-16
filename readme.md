@@ -6,13 +6,11 @@
 2. Setup ![duo-buildroot-sdk](https://github.com/milkv-duo/duo-buildroot-sdk#prepare-the-compilation-environment) on your machine
 
 ## Before anything else
-We need to enable a few modules in the kernel before we can continue,
-so:
 ```bash
+#We need to enable a few modules in the kernel configuration before we can continue, so:
 nano duo-buildroot-sdk/build/boards/cv180x/cv1800b_milkv_duo_sd/linux/cvitek_cv1800b_milkv_duo_sd_defconfig
-```
-and add at the end:
-```bash
+# and add at the end:
+
 CONFIG_CGROUPS=y
 CONFIG_CGROUP_FREEZER=y
 CONFIG_CGROUP_PIDS=y
@@ -31,9 +29,8 @@ CONFIG_TIMERFD=y
 CONFIG_EPOLL=y
 CONFIG_IPV6=y
 CONFIG_FANOTIFY
-```
-optionally (for zram):
-```bash
+
+# optional (enable zram):
 CONFIG_ZSMALLOC=y
 CONFIG_ZRAM=y
 ```
