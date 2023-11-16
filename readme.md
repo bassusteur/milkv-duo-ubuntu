@@ -37,8 +37,12 @@ CONFIG_ZRAM=y
 
 ## Creating the rootfs
 ```bash
-# Install prerequisites
-sudo apt install debootstrap binfmt-support dpkg-cross --no-install-recommends
+# install prerequisites
+sudo apt install debootstrap qemu qemu-user-static binfmt-support dpkg-cross --no-install-recommends
 # generate minimal bootstrap rootfs
 sudo debootstrap --arch=riscv64 --foreign jammy ./temp-rootfs http://ports.ubuntu.com/ubuntu-ports
+# chroot into the rootfs we just created
+sudo chroot temp-rootfs /bin/bash
+# run 2nd stage of deboostrap
+/debootstrap/debootstrap --second-stage
 ```
