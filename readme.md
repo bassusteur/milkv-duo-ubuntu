@@ -35,7 +35,7 @@ CONFIG_ZSMALLOC=y
 CONFIG_ZRAM=y
 ```
 Important: to reduce ram usage follow point n.2 of the ![faq](https://github.com/milkv-duo/duo-buildroot-sdk/tree/develop#faqs), 
-To increase the rootfs partition size you can edit ```bash duo-buildroot-sdk/milkv/genimage-milkv-duo.cfg```
+To increase the rootfs partition size you can edit ```duo-buildroot-sdk/milkv/genimage-milkv-duo.cfg```
 at line 16 replace ```size = 768M``` with ```size = 1G``` or higher as desired
 then follow the ![instructions](https://github.com/milkv-duo/duo-buildroot-sdk#step-by-step-compilation) to manually compile buildroot and the kernel and pack it. 
 
