@@ -35,7 +35,7 @@ CONFIG_ZSMALLOC=y
 CONFIG_ZRAM=y
 ```
 Important: to reduce ram usage follow point n.2 of the ![faq](https://github.com/milkv-duo/duo-buildroot-sdk/tree/develop#faqs), 
-To increase the rootfs partition size you can edit ```duo-buildroot-sdk/milkv/genimage-milkv-duo.cfg```
+to increase the rootfs partition size you can edit ```duo-buildroot-sdk/milkv/genimage-milkv-duo.cfg```
 at line 16 replace ```size = 768M``` with ```size = 1G``` or higher as desired
 then follow the ![instructions](https://github.com/milkv-duo/duo-buildroot-sdk#step-by-step-compilation) to manually compile buildroot and the kernel and pack it. 
 
@@ -124,4 +124,8 @@ next up, we flash the image on the sd card like so:
 ```bash
 dd if=milkv-duo.img of=/dev/sdX status=progress #replace X with your device name
 ```
-we mount the rootfs partition and we delete all the files inside with ```bash sudo rm -r /media/yourusername/rootfs```
+we mount the rootfs partition and we delete all the files inside with ```bash sudo rm -r /media/yourusername/rootfs``` 
+then create a directory ```mkdir ubunturootfs``` to extract our ```Ubuntu-jammy-rootfs.tar``` and run 
+```bash
+tar -xf Ubuntu-jammy-rootfs.tar -C ubunturootfs
+``` 
