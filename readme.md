@@ -67,14 +67,12 @@ deb http://ports.ubuntu.com/ubuntu-ports jammy-security main restricted
 deb http://ports.ubuntu.com/ubuntu-ports jammy-security universe
 deb http://ports.ubuntu.com/ubuntu-ports jammy-security multiverse
 EOF
-
 # update and install some packages
 apt-get update
 apt-get install --no-install-recommends -y util-linux haveged openssh-server systemd kmod initramfs-tools conntrack ebtables ethtool iproute2 iptables mount socat ifupdown iputils-ping vim dhcpcd5 neofetch sudo chrony
 # optional for zram
 apt-get install zram-config
 systemctl enable zram-config
-
 # Create base config files
 mkdir -p /etc/network
 cat >>/etc/network/interfaces <<EOF
@@ -102,16 +100,12 @@ tmpfs		/run		tmpfs	mode=0755,nosuid,nodev,size=64M	0	0
 sysfs		/sys		sysfs	defaults	0	0
 /dev/mmcblk0p3  none            swap    sw              0       0
 EOF
-
 # set hostname
 echo "milkvduo-ubuntu" > /etc/hostname
-
 # set root passwd
 echo "root:riscv" | chpasswd
-
 # enable root login through ssh
 sed -i "s/#PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config
-
 # exit chroot
 exit
 sudo tar -cSf Ubuntu-jammy-rootfs.tar -C temp-rootfs .
