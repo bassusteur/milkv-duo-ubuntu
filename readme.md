@@ -63,4 +63,30 @@ deb http://ports.ubuntu.com/ubuntu-ports jammy-security main restricted
 deb http://ports.ubuntu.com/ubuntu-ports jammy-security universe
 deb http://ports.ubuntu.com/ubuntu-ports jammy-security multiverse
 EOF
+
+# update and install some packages
+apt-get update
+apt-get install --no-install-recommends -y util-linux haveged openssh-server systemd kmod initramfs-tools conntrack ebtables ethtool iproute2 iptables mount socat ifupdown iputils-ping vim dhcpcd5 neofetch sudo chrony
+# optional for zram
+apt-get install zram-config
+systemctl enable zram-config
+
+# Create base config files
+mkdir -p /etc/network
+cat >>/etc/network/interfaces <<EOF
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet dhcp
+EOF
+
+cat >/etc/resolv.conf <<EOF
+nameserver 1.1.1.1
+nameserver 8.8.8.8
+EOF
+
+cat >/etc/fstab <<EOF
+LABEL=rootfs	/	ext4	user_xattr,errors=remount-ro	0	1
+EOF
 ```
