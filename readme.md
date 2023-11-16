@@ -34,7 +34,9 @@ CONFIG_FANOTIFY
 CONFIG_ZSMALLOC=y
 CONFIG_ZRAM=y
 ```
-Important: to reduce ram usage follow point n.2 of the ![faq](https://github.com/milkv-duo/duo-buildroot-sdk/tree/develop#faqs),
+Important: to reduce ram usage follow point n.2 of the ![faq](https://github.com/milkv-duo/duo-buildroot-sdk/tree/develop#faqs), 
+To increase the rootfs partition size you can edit ```bash duo-buildroot-sdk/build/boards/cv180x/cv1800b_milkv_duo_sd/memmap.py```
+at line 43 replace ```ION_SIZE = 26.80078125 * SIZE_1M``` with ```ION_SIZE = 0```
 then follow the ![instructions](https://github.com/milkv-duo/duo-buildroot-sdk#step-by-step-compilation) to manually compile buildroot and the kernel and pack it. 
 
 ## Creating the rootfs
