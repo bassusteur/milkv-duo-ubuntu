@@ -118,8 +118,6 @@ rm -rf temp-rootfs
 
 ```
 ## Flashing
-next up, we flash the image on the sd card like so:
-```bash
-dd if=milkv-duo.img of=/dev/sdX status=progress #replace X with your device name
-```
+next up, we flash the image on the sd card like so 
+```bash dd if=milkv-duo.img of=/dev/sdX status=progress #replace X with your device name```
 we mount the rootfs partition and we delete all the files inside with ```bash sudo rm -r /media/yourusername/rootfs```
