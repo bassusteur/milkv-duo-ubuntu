@@ -5,4 +5,10 @@
 1. Ubuntu 22.04 LTS installed on a virtual machine
 2. The [duo-buildroot-sdk image](https://github.com/milkv-duo/duo-buildroot-sdk/releases/tag/Duo-V1.0.5)
 
-## 
+## Creating the rootfs
+```bash
+# Install prerequisites
+sudo apt install debootstrap binfmt-support dpkg-cross --no-install-recommends
+# generate minimal bootstrap rootfs
+sudo debootstrap --arch=riscv64 --foreign jammy ./temp-rootfs http://ports.ubuntu.com/ubuntu-ports
+```
