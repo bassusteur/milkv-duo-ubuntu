@@ -108,4 +108,10 @@ echo "root:riscv" | chpasswd
 # enable root login through ssh
 sed -i "s/#PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config
 
+# exit chroot
+exit
+sudo tar -cSf Ubuntu-jammy-rootfs.tar -C temp-rootfs .
+gzip Ubuntu-jammy-rootfs.tar
+rm -rf temp-rootfs
+
 ```
