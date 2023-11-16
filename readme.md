@@ -34,6 +34,7 @@ CONFIG_FANOTIFY
 CONFIG_ZSMALLOC=y
 CONFIG_ZRAM=y
 ```
+Then follow the ![instructions](https://github.com/milkv-duo/duo-buildroot-sdk#step-by-step-compilation) to manually compile buildroot and the kernel and pack it. 
 
 ## Creating the rootfs
 ```bash
