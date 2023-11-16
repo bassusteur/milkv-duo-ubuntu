@@ -8,7 +8,7 @@
 ## Before anything else
 ```bash
 #We need to enable a few modules in the kernel configuration before we can continue, so:
-nano duo-buildroot-sdk/build/boards/cv180x/cv1800b_milkv_duo_sd/linux/cvitek_cv1800b_milkv_duo_sd_defconfig
+nano ~/duo-buildroot-sdk/build/boards/cv180x/cv1800b_milkv_duo_sd/linux/cvitek_cv1800b_milkv_duo_sd_defconfig
 
 # and add at the end:
 CONFIG_CGROUPS=y
