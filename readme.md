@@ -86,7 +86,18 @@ nameserver 1.1.1.1
 nameserver 8.8.8.8
 EOF
 
+# write text to fstab (this is with swap enabled if you want to disable it just put a # before the swap line)
 cat >/etc/fstab <<EOF
-LABEL=rootfs	/	ext4	user_xattr,errors=remount-ro	0	1
+# <file system>	<mount pt>	<type>	<options>	<dump>	<pass>
+/dev/root	/		ext2	rw,noauto	0	1
+proc		/proc		proc	defaults	0	0
+devpts		/dev/pts	devpts	defaults,gid=5,mode=620,ptmxmode=0666	0	0
+tmpfs		/dev/shm	tmpfs	mode=0777	0	0
+tmpfs		/tmp		tmpfs	mode=1777	0	0
+tmpfs		/run		tmpfs	mode=0755,nosuid,nodev,size=64M	0	0
+sysfs		/sys		sysfs	defaults	0	0
+/dev/mmcblk0p3  none            swap    sw              0       0
 EOF
+
+
 ```
