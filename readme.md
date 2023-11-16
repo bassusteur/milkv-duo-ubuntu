@@ -99,5 +99,13 @@ sysfs		/sys		sysfs	defaults	0	0
 /dev/mmcblk0p3  none            swap    sw              0       0
 EOF
 
+# set hostname
+echo "milkvduo-ubuntu" > /etc/hostname
+
+# set root passwd
+echo "root:riscv" | chpasswd
+
+# enable root login through ssh
+sed -i "s/#PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config
 
 ```
