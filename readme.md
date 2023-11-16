@@ -7,7 +7,7 @@
 
 ## Before anything else
 ```bash
-#We need to enable a few modules in the kernel configuration before we can continue, so:
+# We need to enable a few modules in the kernel configuration before we can continue, so:
 nano ~/duo-buildroot-sdk/build/boards/cv180x/cv1800b_milkv_duo_sd/linux/cvitek_cv1800b_milkv_duo_sd_defconfig
 
 # and add at the end:
@@ -34,7 +34,8 @@ CONFIG_FANOTIFY
 CONFIG_ZSMALLOC=y
 CONFIG_ZRAM=y
 ```
-Then follow the ![instructions](https://github.com/milkv-duo/duo-buildroot-sdk#step-by-step-compilation) to manually compile buildroot and the kernel and pack it. 
+Important: to reduce ram usage follow point n.2 of the ![faq](https://github.com/milkv-duo/duo-buildroot-sdk/tree/develop#faqs),
+then follow the ![instructions](https://github.com/milkv-duo/duo-buildroot-sdk#step-by-step-compilation) to manually compile buildroot and the kernel and pack it. 
 
 ## Creating the rootfs
 ```bash
