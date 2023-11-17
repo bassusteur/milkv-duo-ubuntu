@@ -1,6 +1,10 @@
 # Ubuntu on the Milk-V Duo
 ![F-MbY2FXUAAk21P](https://github.com/bassusteur/milkv-duo-ubuntu/assets/42449683/3dcdbd84-12a6-4c86-969c-92a2e9e92496)
 
+## Credits
+![great friend julie](https://github.com/tvlad1234)
+![rootfs guide for risc-v](https://github.com/carlosedp/riscv-bringup/blob/master/Ubuntu-Rootfs-Guide.md)
+
 ## Setup 
 1. Ubuntu 22.04 LTS installed on a virtual machine
 2. Setup ![duo-buildroot-sdk](https://github.com/milkv-duo/duo-buildroot-sdk#prepare-the-compilation-environment) on your machine
