@@ -4,6 +4,7 @@
 ## Credits
 ![great friend julie](https://github.com/tvlad1234)
 ![rootfs guide for risc-v](https://github.com/carlosedp/riscv-bringup/blob/master/Ubuntu-Rootfs-Guide.md)
+![DO NOT THE CAT!!!](https://github.com/Mnux9)
 
 ## Setup 
 1. Ubuntu 22.04 LTS installed on a virtual machine
